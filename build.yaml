@@ -19,4 +19,3 @@ include:
     shield: do52pro_tp_right
 #    snippet: zmk-usb-logging studio-rpc-usb-uart
 #    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  　shield: do52pro_settings_reset
