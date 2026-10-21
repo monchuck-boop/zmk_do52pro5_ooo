@@ -200,7 +200,7 @@
       // Disables clicking.
       // Useful when using the PS2 GPIO driver that is prone to
       // erros in transmissions to reduce accidental clicks.
-      // disable-clicking;
+       disable-clicking;
 
 
       // Enable scroll wheel
