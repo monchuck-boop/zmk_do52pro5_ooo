@@ -36,8 +36,8 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
 
-        scale-multiplier = <1>;
-        scale-divisor = <1>;
+        scale-multiplier = <4>;
+        scale-divisor = <5>;
       };
 
       // Input listener for scrolling
@@ -66,7 +66,7 @@
       mouse_ps2_move_tog_layer: mouse_ps2_move_tog_layer {
               compatible = "zmk,input-behavior-tog-layer";
               #binding-cells = <1>;
-              time-to-live-ms = <500>;
+              time-to-live-ms = <250>;
       };
     };
 
