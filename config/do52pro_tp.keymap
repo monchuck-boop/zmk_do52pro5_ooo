@@ -154,7 +154,4 @@
         };
     };
 };
-// ファイルの一番最後（ } の外側）に追記デッドゾーン
-&trackpoint {
-    input-processors = <&zmk_input_processor_deadzone 15>;
-};
+
