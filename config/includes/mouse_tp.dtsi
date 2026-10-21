@@ -85,8 +85,8 @@
           compatible = "zmk,input-accelerator";
 
           acceleration-curve = "sigmoid";
-          acceleration-factor-base = <80>;
-          acceleration-factor-max = <130>;
+          acceleration-factor-base = <50>;
+          acceleration-factor-max = <90>;
           acceleration-factor-rate = <40>;
           acceleration-start-offset = <12>;
           max-speed = <50>;
