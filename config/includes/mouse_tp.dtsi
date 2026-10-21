@@ -88,7 +88,7 @@
           acceleration-factor-base = <40>;
           acceleration-factor-max = <50>;
           acceleration-factor-rate = <40>;
-          acceleration-start-offset = <20>;
+          acceleration-start-offset = <40>;
           max-speed = <40>;
 
           enable-interval-based-speed;
