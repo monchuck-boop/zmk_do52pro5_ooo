@@ -85,11 +85,11 @@
           compatible = "zmk,input-accelerator";
 
           acceleration-curve = "sigmoid";
-          acceleration-factor-base = <50>;
-          acceleration-factor-max = <90>;
+          acceleration-factor-base = <40>;
+          acceleration-factor-max = <50>;
           acceleration-factor-rate = <40>;
-          acceleration-start-offset = <12>;
-          max-speed = <50>;
+          acceleration-start-offset = <20>;
+          max-speed = <40>;
 
           enable-interval-based-speed;
           input-default-sending-rate = <PS2_MOUSE_SAMPLING_RATE>;
