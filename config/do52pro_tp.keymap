@@ -61,6 +61,8 @@
 &kp LCTRL   &kp A         &kp S  &kp D  &kp F  &kp G                &kp H   &kp J  &kp K     &kp L   &mt RSHIFT SEMI &bt BT_SEL 1  
 &kp LSHFT   &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N   &kp M  &kp COMMA &kp DOT &lt 7 FSLH      &bt BT_CLR  
 &kp RET     &kp LCTRL                   &kp LALT  &mt LGUI RET      &lt 1 SPACE &mo 5                &mo 3           &mo 4
+&kp N1&kp N2 &kp N3 &kp N4 &kp N5
+
             >;
         };
 
