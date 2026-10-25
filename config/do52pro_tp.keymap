@@ -12,13 +12,18 @@
 #define MOUSE_TP_SET 8
 
 #ifdef HAS_UROB
+
 #define HAS_TRI_STATE
 #define HAS_NUM_WORD
+
 #endif
 
 #define HAS_MOUSE_KEYS
 #define HAS_MOUSE_TP
 #define HAS_TRI_STATE
+
+// ZMK includes
+// Personal includes
 
 #include "includes/mouse_keys.dtsi"
 #include "includes/mouse_tp.dtsi"
@@ -34,15 +39,15 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // 右手単体化に伴い、コンボの対象キー（物理位置）も右半分に引っ越し
+
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <19 20>; // 物理的に右手の中段人差し指・中指付近
+            key-positions = <13 14>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <31 32>; // 物理的に右手の平、下段付近
+            key-positions = <27 28>;
         };
     };
 
@@ -51,79 +56,101 @@
 
         base_layer {
             bindings = <
-&out OUT_TOG    &kp N0          &kp N9    &kp N8  &kp N7  &kp N6                &kp N5 &kp N4 &kp N3 &kp N2 &kp N1       &kp ESCAPE
-&kp BSPC        &kp P           &kp O     &kp I   &kp U   &kp Y                &kp T  &kp R  &kp E  &kp W  &kp Q        &kp TAB
-&bt BT_SEL 1    &mt RSHIFT SEMI &kp L     &kp K   &kp J   &kp H                &kp G  &kp F  &kp D  &kp S  &kp A        &kp LCTRL
-&bt BT_CLR      &lt 7 FSLH      &kp DOT   &kp COMMA &kp M &kp N                &kp B  &kp V  &kp C  &kp X  &mt LSHIFT Z &kp LSHFT
-&mo 4           &mo 3                     &mo 5   &lt 1 SPACE                  &mt LGUI RET  &kp LALT             &kp LCTRL    &kp RET
-&mkp LCLK       &kp N4          &mkp RCLK &kp N2  &mkp MCLK                    &mkp LCLK &kp N4 &mkp RCLK &kp N2 &mkp MCLK
+&kp ESCAPE  &kp N1        &kp N2 &kp N3 &kp N4 &kp N5               &kp N6  &kp N7 &kp N8    &kp N9  &kp N0          &out OUT_TOG 
+&kp TAB     &kp Q         &kp W  &kp E  &kp R  &kp T                &kp Y   &kp U  &kp I     &kp O   &kp P           &kp BSPC  
+&kp LCTRL   &kp A         &kp S  &kp D  &kp F  &kp G                &kp H   &kp J  &kp K     &kp L   &mt RSHIFT SEMI &bt BT_SEL 1  
+&kp LSHFT   &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N   &kp M  &kp COMMA &kp DOT &lt 7 FSLH      &bt BT_CLR  
+&kp RET     &kp LCTRL                   &kp LALT  &mt LGUI RET      &lt 1 SPACE &mo 5                &mo 3           &mo 4
+&mkp MCLK   &kp N2        &mkp RCLK     &kp N4    &mkp LCLK         &mkp MCLK  &kp N2 &mkp RCLK &kp N4  &mkp LCLK
             >;
         };
 
         lower_layer {
             bindings = <
-&kp F11         &kp F10   &kp F9    &kp F8    &kp F7    &kp F6                 &kp F5   &kp F4   &kp F3   &kp F2   &kp F1   &kp GRAVE
-&kp MINUS       &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                 &kp N3   &kp N4   &kp N3   &kp N2   &kp N1   &kp TAB
-&kp APOS        &kp BSPC  &kp RIGHT &kp UP    &kp DOWN  &kp LEFT               &kp G    &kp LS(RPAR) &kp LS(QMARK) &kp LS(LPAR) &kp MINUS &trans
-&kp RIGHT_SHIFT &kp SQT   &kp GRAVE &kp BSLH  &kp RBKT  &kp LBKT               &kp TILDE &kp LG(K_MUTE) &kp C_VOLUME_UP &kp C_VOL_DN &kp EQUAL &kp LSHFT
-&trans          &trans                        &trans    &trans                 &trans   &trans                    &trans   &trans
-&mkp LCLK       &kp N4    &mkp RCLK &kp N2    &mkp MCLK                        &mkp LCLK &kp N4 &mkp RCLK &kp N2 &mkp MCLK
+&kp GRAVE  &kp F1    &kp F2         &kp F3           &kp F4          &kp F5             &kp F6    &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
+&kp TAB    &kp N1     &kp N2        &kp N3           &kp N4          &kp N3             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp MINUS
+&trans     &kp MINUS  &kp LS(LPAR)  &kp LS(QMARK)    &kp LS(RPAR)    &kp G              &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp BSPC  &kp APOS
+&kp LSHFT  &kp EQUAL  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp LG(K_MUTE)  &kp TILDE          &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE  &kp SQT   &kp RIGHT_SHIFT
+&trans     &trans                                    &trans          &trans             &trans    &trans                         &trans    &trans
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
         upper_layer {
             bindings = <
-&kp EQUAL         &kp MINUS         &none          &none             &none          &kp CARET              &kp PRCNT &kp DLLR &kp HASH &kp AT   &kp EXCL  &kp GRAVE
-&kp INS           &kp RIGHT_BRACKET &kp LEFT_BRACKET &kp UP_ARROW    &none          &none                  &kp GRAVE &kp RBRC &kp LBRC &none    &none     &kp TAB
-&kp APOS          &none             &kp RIGHT_ARROW &kp DOWN_ARROW   &kp LEFT_ARROW &none                  &none     &kp RPAR &kp LPAR &none    &none     &kp LSHFT
-&none             &none             &none          &none             &none          &none                  &none     &kp RPAR &kp LPAR &none    &none     &kp LSHFT
-&kp RGUI          &kp LALT                         &trans            &trans                 &trans &trans                     &none    &kp LCTRL
-&mkp LCLK         &kp N4            &mkp RCLK      &kp N2            &mkp MCLK                             &mkp LCLK &kp N4 &mkp RCLK &kp N2 &mkp MCLK
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT          &kp CARET  &none           &none          &none             &kp MINUS          &kp EQUAL
+&kp TAB    &none     &none   &kp LBRC  &kp RBRC  &kp GRAVE          &none      &none           &kp UP_ARROW   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp INS
+&kp LSHFT  &none     &none   &kp LPAR  &kp RPAR  &none              &none      &kp LEFT_ARROW  &kp DOWN_ARROW &kp RIGHT_ARROW   &none              &kp APOS
+&kp LSHFT  &none     &none   &kp LPAR  &kp RPAR  &none              &none      &none           &none          &none             &none              &none
+&kp LCTRL  &kp LGUI                    &trans    &trans             &trans     &trans                                           &kp LALT           &kp RGUI
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
         func_layer {
             bindings = <
-&kp DEL   &kp F10  &kp F9   &kp F6   &kp F7   &kp F6                 &kp F5 &kp F4 &kp F3 &kp F2 &kp F1  &kp ESC
-&none     &kp MB5  &kp MB2  &kp MB3  &kp MB1  &mkp MB4               &none  &none  &none  &none  &kp F11 &kp TAB
-&none     &none    &none    &none    &none    &none                  &none  &none  &none  &none  &none   &kp LSHFT
-&none     &none    &none    &none    &none    &none                  &none  &none  &none  &none  &none   &kp LSHFT
-&kp RGUI  &kp LALT                   &none    &none                  &none  &none                &kp LGUI &kp LCTRL
-&mkp LCLK &kp N4   &mkp RCLK &kp N2  &mkp MCLK                       &mkp LCLK &kp N4 &mkp RCLK &kp N2 &mkp MCLK
+&kp ESC    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5          &kp F6    &kp F7    &kp F6    &kp F9    &kp F10   &kp DEL
+&kp TAB    &kp F11  &kp F12  &none   &none   &none           &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &mkp MB5  &none
+&kp LSHFT  &none    &none    &none   &none   &none           &none     &none     &none     &none     &none     &none
+&kp LSHFT  &none    &none    &none   &none   &none           &none     &none     &none     &none     &none     &none
+&kp LCTRL  &kp LGUI                  &none   &none           &none     &none                        &kp LALT  &kp RGUI
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
         config_layer {
             bindings = <
-&bootloader       &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0         &bt BT_CLR_ALL &bt BT_DISC 4 &bt BT_DISC 3 &bt BT_DISC 2 &bt BT_DISC 1 &bt BT_DISC 0
-&none             &none          &none          &trans         &bt BT_NXT     &bt BT_PRV           &none          &none         &none         &none         &none         &none
-&none             &none          &none          &none          &none          &none                &none          &none         &none         &none         &none         &none
-&none             &none          &none          &none          &none          &none                &none          &none         &none         &none         &none         &none
-&ext_power EP_ON  &ext_power EP_OFF                            &bt BT_CLR_ALL &bt BT_CLR           &none          &none                       &none         &none
-&mkp LCLK         &kp N4         &mkp RCLK      &kp N2         &mkp MCLK                           &mkp LCLK      &kp N4        &mkp RCLK     &kp N2        &mkp MCLK
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &bt BT_CLR_ALL      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bootloader
+&none          &none          &none          &none          &none          &none               &bt BT_PRV    &bt BT_NXT    &trans        &none         &none             &none
+&none          &none          &none          &none          &none          &none               &none         &none         &none         &none         &none             &none
+&none          &none          &none          &none          &none          &none               &none         &none         &none         &none         &none             &none
+&none          &none                                        &none          &none               &bt BT_CLR    &bt BT_CLR_ALL                            &ext_power EP_OFF &ext_power EP_ON
+&mkp MCLK      &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
         MouseKeys_layer {
             bindings = <
-&mms MS_TP_VALUE6_INCR       &mms MS_TP_PTS_THRESHOLD_INCR &mms MS_TP_SENSITIVITY_INCR &trans          &trans          &trans                 &bt BT_CLR &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-&mms MS_TP_VALUE6_DECR       &mms MS_TP_PTS_THRESHOLD_DECR &mms MS_TP_SENSITIVITY_DECR &trans          &trans          &trans                 &trans     &trans       &trans       &trans       &trans       &trans
-&trans                       &trans                        &msc MOVE_X(10)             &msc MOVE_Y(-10) &mkp MB5       &mkp MB4               &trans     &trans       &trans       &trans       &kp C_BRIGHTNESS_INC &kp C_BRIGHTNESS_DEC
-&trans                       &trans                        &msc MOVE_X(-10)            &msc MOVE_Y(10)  &trans         &trans                 &trans     &kp C_PAUSE  &kp C_NEXT   &kp C_PREV   &trans       &trans
-&trans                       &trans                                                                     &trans         &trans                 &trans     &trans                                 &trans       &trans
-&mkp LCLK                    &kp N4                        &mkp RCLK                   &kp N2          &mkp MCLK                              &mkp LCLK  &kp N4       &mkp RCLK    &kp N2       &mkp MCLK
+&bt BT_SEL 0          &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR                 &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_PTS_THRESHOLD_INCR  &mms MS_TP_VALUE6_INCR
+&trans                &trans                &trans        &trans        &trans        &trans                     &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_PTS_THRESHOLD_DECR  &mms MS_TP_VALUE6_DECR
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans        &trans        &trans        &trans                     &mkp MB4        &mkp MB5        &msc MOVE_Y(-10)  &msc MOVE_X(10)              &trans                         &trans  
+&trans                &trans                &kp C_PREV    &kp C_NEXT    &kp C_PAUSE   &trans                     &trans          &trans          &msc MOVE_Y(10)   &msc MOVE_X(-10)             &trans                         &trans
+&trans                &trans                                            &trans        &trans                     &trans          &trans                                                         &trans                         &trans
+&mkp MCLK             &kp N2                &mkp RCLK     &kp N4        &mkp LCLK                                &mkp MCLK       &kp N2          &mkp RCLK         &kp N4                       &mkp LCLK
             >;
         };
 
         MouseTP_layer {
             bindings = <
-&mms MS_TP_VALUE6_INCR       &mms MS_TP_PTS_THRESHOLD_INCR &mms MS_TP_SENSITIVITY_INCR &trans          &trans          &trans                 &trans     &trans       &trans       &trans       &trans       &trans
-&mms MS_TP_VALUE6_DECR       &mms MS_TP_PTS_THRESHOLD_DECR &mms MS_TP_SENSITIVITY_DECR &trans          &trans          &trans                 &trans     &trans       &trans       &trans       &trans       &trans
-&trans                       &trans                        &msc MOVE_X(10)             &msc MOVE_Y(-10) &mkp MB5       &mkp MB4               &trans     &trans       &trans       &trans       &trans       &trans
-&trans                       &trans                        &msc MOVE_X(-10)            &msc MOVE_Y(10)  &trans         &trans                 &trans     &trans       &trans       &trans       &trans       &trans
-&trans                       &trans                                                                     &mkp RCLK      &mkp LCLK              &trans     &trans                                 &trans       &trans
-&mkp LCLK                    &kp N4                        &mkp RCLK                   &kp N2          &mkp MCLK                              &mkp LCLK  &kp N4       &mkp RCLK    &kp N2       &mkp MCLK
+&trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_PTS_THRESHOLD_INCR  &mms MS_TP_VALUE6_INCR
+&trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_PTS_THRESHOLD_DECR  &mms MS_TP_VALUE6_DECR
+&trans  &trans  &trans  &trans  &trans  &trans              &mkp MB4        &mkp MB5        &msc MOVE_Y(-10)  &msc MOVE_X(10)              &trans                         &trans  
+&trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &msc MOVE_Y(10)   &msc MOVE_X(-10)             &trans                         &trans
+&trans  &trans                  &trans  &trans              &mkp LCLK       &mkp RCLK                                                      &trans                         &trans
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
-    };
+
+        MouseTP_Keys_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &mkp MB4  &mkp MB5 &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans   &trans  &trans  &trans  &trans
+&trans  &trans                  &trans  &trans              &mkp LCLK &mkp RCLK               &trans  &trans
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
+            >;
+        };
+
+        MouseTP_Set_layer {
+            bindings = <
+&tog MOUSE_TP_SET  &trans  &trans  &trans  &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_SENSITIVITY_INCR  &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans  &trans                       &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans  &trans                       &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans  &trans                       &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans                  &trans                       &trans                       &trans  &trans                  &trans  &trans
+&mkp MCLK          &kp N2  &mkp RCLK  &kp N4  &mkp LCLK                                              &mkp MCLK  &kp N2  &mkp RCLK  &kp N4  &mkp LCLK
+>;
+};
+};
 };
