@@ -61,7 +61,7 @@
 &kp LCTRL   &kp A         &kp S  &kp D  &kp F  &kp G                &kp H   &kp J  &kp K     &kp L   &mt RSHIFT SEMI &bt BT_SEL 1  
 &kp LSHFT   &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N   &kp M  &kp COMMA &kp DOT &lt 7 FSLH      &bt BT_CLR  
 &kp RET     &kp LCTRL                   &kp LALT  &mt LGUI RET      &lt 1 SPACE &mo 5                &mo 3           &mo 4
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                      &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK   &kp N2        &mkp RCLK     &kp N4    &mkp LCLK         &mkp MCLK  &kp N2 &mkp RCLK &kp N4  &mkp LCLK
             >;
         };
 
@@ -72,7 +72,7 @@
 &trans     &kp MINUS  &kp LS(LPAR)  &kp LS(QMARK)    &kp LS(RPAR)    &kp G              &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp BSPC  &kp APOS
 &kp LSHFT  &kp EQUAL  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp LG(K_MUTE)  &kp TILDE          &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE  &kp SQT   &kp RIGHT_SHIFT
 &trans     &trans                                    &trans          &trans             &trans    &trans                         &trans    &trans
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK5
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -83,7 +83,7 @@
 &kp LSHFT  &none     &none   &kp LPAR  &kp RPAR  &none              &none      &kp LEFT_ARROW  &kp DOWN_ARROW &kp RIGHT_ARROW   &none              &kp APOS
 &kp LSHFT  &none     &none   &kp LPAR  &kp RPAR  &none              &none      &none           &none          &none             &none              &none
 &kp LCTRL  &kp LGUI                    &trans    &trans             &trans     &trans                                           &kp LALT           &kp RGUI
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -94,7 +94,7 @@
 &kp LSHFT  &none    &none    &none   &none   &none           &none     &none     &none     &none     &none     &none
 &kp LSHFT  &none    &none    &none   &none   &none           &none     &none     &none     &none     &none     &none
 &kp LCTRL  &kp LGUI                  &none   &none           &none     &none                        &kp LALT  &kp RGUI
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -105,7 +105,7 @@
 &none          &none          &none          &none          &none          &none               &none         &none         &none         &none         &none             &none
 &none          &none          &none          &none          &none          &none               &none         &none         &none         &none         &none             &none
 &none          &none                                        &none          &none               &bt BT_CLR    &bt BT_CLR_ALL                            &ext_power EP_OFF &ext_power EP_ON
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK      &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -114,9 +114,9 @@
 &bt BT_SEL 0          &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR                 &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_PTS_THRESHOLD_INCR  &mms MS_TP_VALUE6_INCR
 &trans                &trans                &trans        &trans        &trans        &trans                     &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_PTS_THRESHOLD_DECR  &mms MS_TP_VALUE6_DECR
 &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans        &trans        &trans        &trans                     &mkp MB4        &mkp MB5        &msc MOVE_Y(-10)  &msc MOVE_X(10)              &trans                         &trans  
-&trans                &trans                &kp C_PREV    &kp C_NEXT    &kp C_PAUSE   &trans                     &trans          &trans          &msc MOVE_Y(10)   &msc (MOVE_X(-10))           &trans                         &trans
+&trans                &trans                &kp C_PREV    &kp C_NEXT    &kp C_PAUSE   &trans                     &trans          &trans          &msc MOVE_Y(10)   &msc MOVE_X(-10)             &trans                         &trans
 &trans                &trans                                            &trans        &trans                     &trans          &trans                                                         &trans                         &trans
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK             &kp N2                &mkp RCLK     &kp N4        &mkp LCLK                                &mkp MCLK       &kp N2          &mkp RCLK         &kp N4                       &mkp LCLK
             >;
         };
 
@@ -125,9 +125,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_PTS_THRESHOLD_INCR  &mms MS_TP_VALUE6_INCR
 &trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &trans            &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_PTS_THRESHOLD_DECR  &mms MS_TP_VALUE6_DECR
 &trans  &trans  &trans  &trans  &trans  &trans              &mkp MB4        &mkp MB5        &msc MOVE_Y(-10)  &msc MOVE_X(10)              &trans                         &trans  
-&trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &msc MOVE_Y(10)   &msc (MOVE_X(-10))           &trans                         &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans          &trans          &msc MOVE_Y(10)   &msc MOVE_X(-10)             &trans                         &trans
 &trans  &trans                  &trans  &trans              &mkp LCLK       &mkp RCLK                                                      &trans                         &trans
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -138,7 +138,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans              &mkp MB4  &mkp MB5 &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans   &trans  &trans  &trans  &trans
 &trans  &trans                  &trans  &trans              &mkp LCLK &mkp RCLK               &trans  &trans
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK  &kp N2        &mkp RCLK  &kp N4           &mkp LCLK                          &mkp MCLK &kp N2    &mkp RCLK &kp N4     &mkp LCLK
             >;
         };
 
@@ -149,7 +149,7 @@
 &trans             &trans  &trans  &trans  &trans                       &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &trans             &trans  &trans  &trans  &trans                       &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &trans             &trans                  &trans                       &trans                       &trans  &trans                  &trans  &trans
-&mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK                             &mkp MCLK     &kp N2        &mkp RCLK     &kp N4           &mkp LCLK
+&mkp MCLK          &kp N2  &mkp RCLK  &kp N4  &mkp LCLK                                              &mkp MCLK  &kp N2  &mkp RCLK  &kp N4  &mkp LCLK
 >;
 };
 };
