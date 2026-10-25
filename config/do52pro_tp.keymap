@@ -155,7 +155,4 @@
 };
 };
 
-/* トラックポイント動作時の自動レイヤー切り替え（Automouse）を無効化 */
-&trackpoint_listener {
-    /delete-property/ layers;
-};
+
