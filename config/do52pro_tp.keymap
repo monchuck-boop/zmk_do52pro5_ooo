@@ -60,7 +60,7 @@
 
         lower_layer {
             bindings = <
-&bootloade      &kp F10   &kp F9    &kp F8    &kp F7    &kp F6                 &bootloader   &kp F4   &kp F3   &kp F2   &kp F1   &kp GRAVE
+&bootloader     &kp F10   &kp F9    &kp F8    &kp F7    &kp F6                 &bootloader   &kp F4   &kp F3   &kp F2   &kp F1   &kp GRAVE
 &kp MINUS       &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                 &kp N3   &kp N4   &kp N3   &kp N2   &kp N1   &kp TAB
 &kp APOS        &kp BSPC  &kp RIGHT &kp UP    &kp DOWN  &kp LEFT               &kp G    &kp LS(RPAR) &kp LS(QMARK) &kp LS(LPAR) &kp MINUS &trans
 &kp RIGHT_SHIFT &kp SQT   &kp GRAVE &kp BSLH  &kp RBKT  &kp LBKT               &kp TILDE &kp LG(K_MUTE) &kp C_VOLUME_UP &kp C_VOL_DN &kp EQUAL &kp LSHFT
